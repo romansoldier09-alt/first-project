@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rainbow Landscaping | Free Estimates</title>
+  <meta name="description" content="Rainbow Landscaping offers landscaping services, new sprinkler systems, and sprinkler repairs with free estimates." />
+  <style>
+    :root {
+      --green: #2f7d32;
+      --green-dark: #215b24;
+      --blue: #2f80ed;
+      --light: #f6faf6;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .lang-toggle {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--green-dark);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .hero {
+      padding: 56px 0 30px;
+      background: linear-gradient(180deg, #f8fff8 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #eaf6eb;
+      color: var(--green-dark);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-copy {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery figcaption {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .about-box,
+    .contact-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-list {
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+    }
+
+    .contact-list li {
+      margin-bottom: 10px;
+    }
+
+    .form {
+      display: grid;
+      gap: 12px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    footer {
+      padding: 24px 0 40px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .contact-grid,
+      .cards,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Rainbow Landscaping</div>
+      <nav class="nav-links">
+        <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+        <a href="#about" data-en="About" data-es="Nosotros">About</a>
+        <a href="#work" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+        <button class="lang-toggle" id="langToggle">ES</button>
+        <a class="btn" href="tel:3853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" data-en="Free Estimates" data-es="Estimados Gratis">Free Estimates</div>
+          <h1 data-en="Reliable Landscaping & Sprinkler Services" data-es="Servicios Confiables de Jardinería y Riego">Reliable Landscaping & Sprinkler Services</h1>
+          <p class="lead" data-en="Rainbow Landscaping helps homeowners with landscaping services, new sprinkler systems, and sprinkler repairs. Honest work, professional service, and free estimates." data-es="Rainbow Landscaping ayuda a los dueños de casa con jardinería, instalación de sistemas de riego nuevos y reparación de riego. Trabajo honesto, servicio profesional y estimados gratis.">Rainbow Landscaping helps homeowners with landscaping services, new sprinkler systems, and sprinkler repairs. Honest work, professional service, and free estimates.</p>
+          <div class="hero-actions">
+            <a class="btn" href="tel:3853497297" data-en="Call 385-349-7297" data-es="Llame al 385-349-7297">Call 385-349-7297</a>
+            <a class="btn secondary" href="#contact" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="truck-main.jpg" alt="Rainbow Landscaping truck" />
+          <p data-en="Replace this image with Carlos's best truck or jobsite photo." data-es="Reemplaza esta imagen con la mejor foto del camión o de un trabajo de Carlos.">Replace this image with Carlos's best truck or jobsite photo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+        <p class="section-copy" data-en="Simple, reliable outdoor services to keep your yard looking great and your sprinkler system working right." data-es="Servicios simples y confiables para mantener su jardín en excelente estado y su sistema de riego funcionando bien.">Simple, reliable outdoor services to keep your yard looking great and your sprinkler system working right.</p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🌿</div>
+            <h3 data-en="Landscaping Services" data-es="Servicios de Jardinería">Landscaping Services</h3>
+            <p data-en="General landscaping help to improve and maintain the look of your yard." data-es="Ayuda general de jardinería para mejorar y mantener la apariencia de su jardín.">General landscaping help to improve and maintain the look of your yard.</p>
+          </div>
+          <div class="card">
+            <div class="icon">💧</div>
+            <h3 data-en="New Sprinkler Systems" data-es="Sistemas de Riego Nuevos">New Sprinkler Systems</h3>
+            <p data-en="Installation of new sprinkler systems for healthy, efficient watering." data-es="Instalación de sistemas de riego nuevos para un riego eficiente y saludable.">Installation of new sprinkler systems for healthy, efficient watering.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🔧</div>
+            <h3 data-en="Sprinkler Repairs" data-es="Reparación de Riego">Sprinkler Repairs</h3>
+            <p data-en="Fast repairs for broken sprinkler heads, leaks, lines, and watering issues." data-es="Reparaciones rápidas para aspersores dañados, fugas, líneas y problemas de riego.">Fast repairs for broken sprinkler heads, leaks, lines, and watering issues.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-box">
+          <h2 data-en="About Rainbow Landscaping" data-es="Sobre Rainbow Landscaping">About Rainbow Landscaping</h2>
+          <p class="section-copy" style="margin-bottom:0;" data-en="At Rainbow Landscaping, we take pride in helping customers keep their yards looking their best. We focus on dependable service, quality work, and making it easy for homeowners to get the help they need." data-es="En Rainbow Landscaping nos enorgullece ayudar a nuestros clientes a mantener sus jardines en las mejores condiciones. Nos enfocamos en servicio confiable, trabajo de calidad y en hacer fácil el proceso para cada cliente.">At Rainbow Landscaping, we take pride in helping customers keep their yards looking their best. We focus on dependable service, quality work, and making it easy for homeowners to get the help they need.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2 data-en="Our Work" data-es="Nuestro Trabajo">Our Work</h2>
+        <p class="section-copy" data-en="Start with truck photos now. Later, replace these with job photos, sprinkler installs, and before-and-after yard transformations." data-es="Empieza con fotos de los camiones por ahora. Después, reemplázalas con fotos de trabajos, instalaciones de riego y cambios de jardín antes y después.">Start with truck photos now. Later, replace these with job photos, sprinkler installs, and before-and-after yard transformations.</p>
+
+        <div class="gallery">
+          <figure>
+            <img src="truck-main.jpg" alt="Rainbow Landscaping truck front view" />
+            <figcaption data-en="Professional branded work truck" data-es="Camión de trabajo con imagen profesional">Professional branded work truck</figcaption>
+          </figure>
+          <figure>
+            <img src="truck-side.jpg" alt="Rainbow Landscaping truck side view" />
+            <figcaption data-en="Business branding and contact info" data-es="Marca del negocio e información de contacto">Business branding and contact info</figcaption>
+          </figure>
+          <figure>
+            <img src="sprinkler-rainbow.jpg" alt="Sprinklers creating a rainbow in the sunlight" />
+            <figcaption data-en="Add a future sprinkler photo with a rainbow effect" data-es="Agrega una futura foto de aspersores con efecto de arcoíris">Add a future sprinkler photo with a rainbow effect</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-box">
+        <div class="contact-grid">
+          <div>
+            <h2 style="text-align:left;" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</h2>
+            <p class="muted" data-en="Call or send a message today to talk about your landscaping or sprinkler project." data-es="Llama o manda un mensaje hoy para hablar de tu proyecto de jardinería o riego.">Call or send a message today to talk about your landscaping or sprinkler project.</p>
+            <ul class="contact-list">
+              <li><strong data-en="Phone:" data-es="Teléfono:">Phone:</strong> <a href="tel:3853497297">385-349-7297</a></li>
+              <li><strong data-en="Business:" data-es="Negocio:">Business:</strong> Rainbow Landscaping</li>
+              <li><strong data-en="Languages:" data-es="Idiomas:">Languages:</strong> <span data-en="Spanish, English" data-es="Español, Inglés">Spanish, English</span></li>
+              <li><strong data-en="Service Area:" data-es="Área de Servicio:">Service Area:</strong> <span data-en="Add cities here" data-es="Agrega ciudades aquí">Add cities here</span></li>
+            </ul>
+          </div>
+
+          <form class="form" onsubmit="event.preventDefault(); alert(currentLang === 'en' ? 'Thanks! Replace this form with Wix Forms or your contact method.' : '¡Gracias! Reemplaza este formulario con Wix Forms o tu método de contacto.');">
+            <input type="text" placeholder="Name / Nombre" />
+            <input type="tel" placeholder="Phone / Teléfono" />
+            <textarea placeholder="Tell us about your project / Cuéntanos sobre tu proyecto"></textarea>
+            <button class="btn" type="submit" data-en="Send Request" data-es="Enviar Solicitud">Send Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p data-en="Rainbow Landscaping • Free Estimates • Call 385-349-7297" data-es="Rainbow Landscaping • Estimados Gratis • Llame al 385-349-7297">Rainbow Landscaping • Free Estimates • Call 385-349-7297</p>
+    </div>
+  </footer>
+
+  <script>
+    let currentLang = 'en';
+    const toggleBtn = document.getElementById('langToggle');
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang === 'en' ? 'en' : 'es';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(lang === 'en' ? 'data-en' : 'data-es');
+      });
+      toggleBtn.textContent = lang === 'en' ? 'ES' : 'EN';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      setLanguage(currentLang === 'en' ? 'es' : 'en');
+    });
+  </script>
+</body>
+</html>

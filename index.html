@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My First Real Website</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      color: #222;
+    }
+
+    nav {
+      background: #111827;
+      color: white;
+      padding: 18px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    .hero img {
+      width: 180px;
+      max-width: 90%;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 2.4rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .interactive-box {
+      background: white;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    input {
+      padding: 12px;
+      width: 100%;
+      max-width: 320px;
+      font-size: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 12px 18px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .blue-btn {
+      background: #2563eb;
+    }
+
+    .green-btn {
+      background: #16a34a;
+    }
+
+    .dark-btn {
+      background: #111827;
+    }
+
+    .message-box,
+    .counter-box {
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 10px;
+      background: #f9fafb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>Roman's First Site</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#playground">Playground</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="about">
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Laptop workspace" />
+    <h1>Welcome to my first real website</h1>
+    <p>
+      I’m learning how to build websites in VS Code, style them with CSS,
+      and make them interactive with JavaScript.
+    </p>
+  </section>
+
+  <section class="section" id="features">
+    <h2>What this site includes</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>HTML</h3>
+        <p>The structure of the page like headings, text, buttons, and sections.</p>
+      </div>
+      <div class="card">
+        <h3>CSS</h3>
+        <p>The design part that controls colors, spacing, layout, and style.</p>
+      </div>
+      <div class="card">
+        <h3>JavaScript</h3>
+        <p>The interactive part that responds when you click buttons or type things.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="playground">
+    <div class="interactive-box">
+      <h2>Interactive Playground</h2>
+      <p>Try typing your name and clicking the buttons.</p>
+
+      <input type="text" id="nameInput" placeholder="Type your name here" />
+
+      <div class="button-group">
+        <button class="blue-btn" onclick="showName()">Show My Name</button>
+        <button class="green-btn" onclick="countClick()">Click Counter</button>
+        <button class="dark-btn" onclick="changeTheme()">Change Theme</button>
+      </div>
+
+      <div class="message-box">
+        <p id="message">Your message will show here.</p>
+      </div>
+
+      <div class="counter-box">
+        <p>Button clicks: <span id="count">0</span></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Built by me in VS Code 😎
+  </footer>
+
+  <script>
+    let clickCount = 0;
+    let darkMode = false;
+
+    function showName() {
+      const name = document.getElementById("nameInput").value.trim();
+      const message = document.getElementById("message");
+
+      if (name === "") {
+        message.textContent = "Please type your name first.";
+      } else {
+        message.textContent = "Welcome, " + name + "! Glad you're here.";
+      }
+    }
+
+    function countClick() {
+      clickCount++;
+      document.getElementById("count").textContent = clickCount;
+    }
+
+    function changeTheme() {
+      darkMode = !darkMode;
+      const body = document.body;
+      const cards = document.querySelectorAll(".card");
+      const interactiveBox = document.querySelector(".interactive-box");
+      const nav = document.querySelector("nav");
+
+      if (darkMode) {
+        body.style.background = "#111827";
+        body.style.color = "#ffffff";
+        nav.style.background = "#000000";
+        interactiveBox.style.background = "#1f2937";
+        document.getElementById("message").textContent = "Dark mode activated.";
+
+        cards.forEach(card => {
+          card.style.background = "#1f2937";
+          card.style.color = "#ffffff";
+        });
+      } else {
+        body.style.background = "#f3f4f6";
+        body.style.color = "#222";
+        nav.style.background = "#111827";
+        interactiveBox.style.background = "#ffffff";
+        document.getElementById("message").textContent = "Light mode activated.";
+
+        cards.forEach(card => {
+          card.style.background = "#ffffff";
+          card.style.color = "#222";
+        });
+      }
+    }
+  </script>
+</body>
+</html>
