@@ -188,6 +188,23 @@
       box-shadow: var(--shadow);
     }
 
+    .hero-card strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .hero-card li + li {
+      margin-top: 10px;
+    }
+
     .hero-card p {
       margin: 10px 0 0;
       color: var(--muted);
@@ -404,7 +421,7 @@
         <a href="#services" data-en="Services" data-es="Servicios">Services</a>
         <a href="#about" data-en="About" data-es="Nosotros">About</a>
         <a href="#work" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</a>
-        <a href="projects.html" data-en="Projects" data-es="Proyectos">Projects</a>
+        <a href="./projects.html" data-en="Projects" data-es="Proyectos">Projects</a>
         <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
         <button class="lang-toggle" id="langToggle">ES</button>
         <a class="btn" href="tel:13853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
@@ -416,9 +433,9 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow" data-en="Free Estimates" data-es="Estimados Gratis">Free Estimates</div>
-          <h1 data-en="Hi, I'm Carlos. I help Utah Valley homeowners with clean, reliable landscaping and sprinkler work." data-es="Hola, soy Carlos. Ayudo a familias de Utah Valley con jardinería y trabajos de riego limpios y confiables.">Hi, I'm Carlos. I help Utah Valley homeowners with clean, reliable landscaping and sprinkler work.</h1>
-          <p class="lead" data-en="At Rainbow Landscaping, I focus on simple, honest work that helps your yard look better, water better, and feel easier to take care of. I can help with landscaping, sprinkler installation, and sprinkler repairs." data-es="En Rainbow Landscaping me enfoco en trabajo simple y honesto para que su patio se vea mejor, riegue mejor y sea más fácil de mantener. Le puedo ayudar con jardinería, instalación de riego y reparación de riego.">At Rainbow Landscaping, I focus on simple, honest work that helps your yard look better, water better, and feel easier to take care of. I can help with landscaping, sprinkler installation, and sprinkler repairs.</p>
+          <div class="eyebrow" data-en="Rainbow Landscaping" data-es="Rainbow Landscaping">Rainbow Landscaping</div>
+          <h1 data-en="Friendly Utah Valley landscaping and sprinkler help from Carlos" data-es="Ayuda amigable de jardinería y riego en Utah Valley con Carlos">Friendly Utah Valley landscaping and sprinkler help from Carlos</h1>
+          <p class="lead" data-en="Rainbow Landscaping offers straightforward landscaping, sprinkler installation, and sprinkler repair services for homeowners across Utah Valley. Clean work, honest communication, and free estimates." data-es="Rainbow Landscaping ofrece jardinería, instalación de riego y reparación de riego para familias en Utah Valley. Trabajo limpio, comunicación honesta y estimados gratis.">Rainbow Landscaping offers straightforward landscaping, sprinkler installation, and sprinkler repair services for homeowners across Utah Valley. Clean work, honest communication, and free estimates.</p>
           <div class="hero-meta">
             <span data-en="Service Area: Utah Valley and surrounding communities" data-es="Área de Servicio: Utah Valley y comunidades cercanas">Service Area: Utah Valley and surrounding communities</span>
             <span data-en="Free estimates available. Se habla español." data-es="Estimados gratis disponibles. Se habla español.">Free estimates available. Se habla español.</span>
@@ -431,8 +448,13 @@
         </div>
 
         <div class="hero-card">
-          <img src="../Project Photos- Carlos Z/backyard1.jpg" alt="Freshly completed backyard landscaping project" />
-          <p data-en="Real project photo from Rainbow Landscaping." data-es="Foto real de un proyecto de Rainbow Landscaping.">Real project photo from Rainbow Landscaping.</p>
+          <strong data-en="Simple, local service for homeowners" data-es="Servicio local y simple para familias">Simple, local service for homeowners</strong>
+          <ul>
+            <li data-en="Utah Valley landscaping and sprinkler services designed to keep your yard looking clean and working well." data-es="Servicios de jardinería y riego en Utah Valley para que su patio se vea limpio y funcione bien.">Utah Valley landscaping and sprinkler services designed to keep your yard looking clean and working well.</li>
+            <li data-en="Call or text Carlos for help with landscaping, sprinkler installation, or sprinkler repairs." data-es="Llame o mande texto a Carlos para ayuda con jardinería, instalación de riego o reparación de riego.">Call or text Carlos for help with landscaping, sprinkler installation, or sprinkler repairs.</li>
+            <li data-en="Free estimates available. Se habla español." data-es="Estimados gratis disponibles. Se habla español.">Free estimates available. Se habla español.</li>
+          </ul>
+          <p data-en="You can see recent project photos farther down the page and in the full projects gallery." data-es="Puede ver fotos de proyectos recientes más abajo en la página y en la galería completa de proyectos.">You can see recent project photos farther down the page and in the full projects gallery.</p>
         </div>
       </div>
     </section>
@@ -480,7 +502,7 @@
           </div>
 
           <div class="recent-projects-actions">
-            <a class="btn secondary" href="projects.html" data-en="View All Projects" data-es="Ver Todos los Proyectos">View All Projects</a>
+            <a class="btn secondary" href="./projects.html" data-en="View All Projects" data-es="Ver Todos los Proyectos">View All Projects</a>
           </div>
         </div>
       </div>
