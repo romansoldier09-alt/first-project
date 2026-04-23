@@ -4,7 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rainbow Landscaping | Free Estimates</title>
-  <meta name="description" content="Rainbow Landscaping offers landscaping services, new sprinkler systems, and sprinkler repairs with free estimates." />
+  <meta name="description" content="Utah Valley landscaping and sprinkler services with free estimates from Rainbow Landscaping." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rainbow Landscaping | Free Estimates" />
+  <meta property="og:description" content="Utah Valley landscaping and sprinkler services with free estimates from Rainbow Landscaping." />
+  <meta property="og:site_name" content="Rainbow Landscaping" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Rainbow Landscaping | Free Estimates" />
+  <meta name="twitter:description" content="Utah Valley landscaping and sprinkler services with free estimates from Rainbow Landscaping." />
   <style>
     :root {
       --green: #2f7d32;
@@ -104,8 +111,10 @@
     }
 
     .hero {
-      padding: 56px 0 30px;
-      background: linear-gradient(180deg, #f8fff8 0%, #ffffff 100%);
+      padding: 64px 0 40px;
+      background:
+        radial-gradient(circle at top left, rgba(47, 125, 50, 0.10) 0%, rgba(47, 125, 50, 0) 35%),
+        linear-gradient(180deg, #f8fff8 0%, #ffffff 100%);
     }
 
     .hero-grid {
@@ -113,6 +122,10 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 34px;
       align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 640px;
     }
 
     .eyebrow {
@@ -184,29 +197,34 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 14px;
+      padding: 18px;
       box-shadow: var(--shadow);
     }
 
-    .hero-card strong {
+    .hero-image-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-bottom: 14px;
+      background: linear-gradient(180deg, #eef8ef 0%, #ffffff 100%);
+    }
+
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(47, 125, 50, 0.04) 0%, rgba(255, 255, 255, 0) 45%, rgba(33, 91, 36, 0.08) 100%);
+      pointer-events: none;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: auto;
       display: block;
-      color: var(--green-dark);
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
-
-    .hero-card ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .hero-card li + li {
-      margin-top: 10px;
     }
 
     .hero-card p {
-      margin: 10px 0 0;
+      margin: 0;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -432,29 +450,31 @@
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
           <div class="eyebrow" data-en="Rainbow Landscaping" data-es="Rainbow Landscaping">Rainbow Landscaping</div>
-          <h1 data-en="Friendly Utah Valley landscaping and sprinkler help from Carlos" data-es="Ayuda amigable de jardinería y riego en Utah Valley con Carlos">Friendly Utah Valley landscaping and sprinkler help from Carlos</h1>
-          <p class="lead" data-en="Rainbow Landscaping offers straightforward landscaping, sprinkler installation, and sprinkler repair services for homeowners across Utah Valley. Clean work, honest communication, and free estimates." data-es="Rainbow Landscaping ofrece jardinería, instalación de riego y reparación de riego para familias en Utah Valley. Trabajo limpio, comunicación honesta y estimados gratis.">Rainbow Landscaping offers straightforward landscaping, sprinkler installation, and sprinkler repair services for homeowners across Utah Valley. Clean work, honest communication, and free estimates.</p>
+          <h1 data-en="Professional Landscaping and Sprinkler Services in Utah Valley" data-es="Servicios Profesionales de Jardinería y Riego en Utah Valley">Professional Landscaping and Sprinkler Services in Utah Valley</h1>
+          <p class="lead" data-en="Clean, reliable landscaping, sprinkler installs, repairs, and outdoor upgrades that keep your yard looking its best." data-es="Jardinería limpia y confiable, instalación y reparación de riego, y mejoras exteriores para que su patio siempre se vea en su mejor estado.">Clean, reliable landscaping, sprinkler installs, repairs, and outdoor upgrades that keep your yard looking its best.</p>
           <div class="hero-meta">
             <span data-en="Service Area: Utah Valley and surrounding communities" data-es="Área de Servicio: Utah Valley y comunidades cercanas">Service Area: Utah Valley and surrounding communities</span>
             <span data-en="Free estimates available. Se habla español." data-es="Estimados gratis disponibles. Se habla español.">Free estimates available. Se habla español.</span>
           </div>
-          <p class="hero-actions-copy" data-en="Call or text for a free estimate" data-es="Llame o mande texto para un estimado gratis">Call or text for a free estimate</p>
+          <p class="hero-actions-copy" data-en="Simple scheduling, honest communication, and quality work from a local contractor." data-es="Programación sencilla, comunicación honesta y trabajo de calidad con un contratista local.">Simple scheduling, honest communication, and quality work from a local contractor.</p>
           <div class="hero-actions">
-            <a class="btn" href="tel:13853497297" data-en="Call Carlos" data-es="Llamar a Carlos">Call Carlos</a>
-            <a class="btn secondary" href="sms:13853497297" data-en="Text Carlos" data-es="Mandar Texto a Carlos">Text Carlos</a>
+            <a class="btn" href="#contact" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</a>
+            <a class="btn secondary" href="./projects.html" data-en="View Projects" data-es="Ver Proyectos">View Projects</a>
           </div>
         </div>
 
         <div class="hero-card">
-          <strong data-en="Simple, local service for homeowners" data-es="Servicio local y simple para familias">Simple, local service for homeowners</strong>
-          <ul>
-            <li data-en="Utah Valley landscaping and sprinkler services designed to keep your yard looking clean and working well." data-es="Servicios de jardinería y riego en Utah Valley para que su patio se vea limpio y funcione bien.">Utah Valley landscaping and sprinkler services designed to keep your yard looking clean and working well.</li>
-            <li data-en="Call or text Carlos for help with landscaping, sprinkler installation, or sprinkler repairs." data-es="Llame o mande texto a Carlos para ayuda con jardinería, instalación de riego o reparación de riego.">Call or text Carlos for help with landscaping, sprinkler installation, or sprinkler repairs.</li>
-            <li data-en="Free estimates available. Se habla español." data-es="Estimados gratis disponibles. Se habla español.">Free estimates available. Se habla español.</li>
-          </ul>
-          <p data-en="You can see recent project photos farther down the page and in the full projects gallery." data-es="Puede ver fotos de proyectos recientes más abajo en la página y en la galería completa de proyectos.">You can see recent project photos farther down the page and in the full projects gallery.</p>
+          <div class="hero-image-wrap">
+            <img
+              src="./project-photos/rainbow-landscaping-sprinkler-head-rainbow.jpg"
+              alt="Sprinkler system installation with rainbow water spray - Rainbow Landscaping"
+              width="1536"
+              height="1024"
+            />
+          </div>
+          <p data-en="Trusted local service for lawns, sprinklers, and outdoor spaces that need dependable care." data-es="Servicio local confiable para césped, riego y espacios exteriores que necesitan buen mantenimiento.">Trusted local service for lawns, sprinklers, and outdoor spaces that need dependable care.</p>
         </div>
       </div>
     </section>
