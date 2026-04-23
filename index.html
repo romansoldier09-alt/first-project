@@ -3,268 +3,612 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My First Real Website</title>
-
+  <title>Rainbow Landscaping | Free Estimates</title>
+  <meta name="description" content="Rainbow Landscaping offers landscaping services, new sprinkler systems, and sprinkler repairs with free estimates." />
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --green: #2f7d32;
+      --green-dark: #215b24;
+      --blue: #2f80ed;
+      --light: #f6faf6;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0,0,0,0.08);
+      --radius: 18px;
+      --max: 1100px;
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
     }
 
-    nav {
-      background: #111827;
-      color: white;
-      padding: 18px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
     }
 
-    nav h2 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    nav a {
-      color: white;
+    a {
+      color: inherit;
       text-decoration: none;
-      margin-left: 18px;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
       font-size: 0.95rem;
     }
 
+    .lang-toggle {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--green-dark);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
     .hero {
+      padding: 56px 0 30px;
+      background: linear-gradient(180deg, #f8fff8 0%, #ffffff 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #eaf6eb;
+      color: var(--green-dark);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
       text-align: center;
-      padding: 60px 20px 30px;
+      margin-bottom: 10px;
     }
 
-    .hero img {
-      width: 180px;
-      max-width: 90%;
-      border-radius: 16px;
-      margin-bottom: 20px;
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 640px;
     }
 
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: 2.4rem;
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
     }
 
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-      color: #4b5563;
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 14px;
+      color: var(--green-dark);
+      font-size: 0.94rem;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
     }
 
-    .section {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .hero-actions-copy {
+      margin: 18px 0 0;
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-copy {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: var(--muted);
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      margin-top: 25px;
     }
 
     .card {
-      background: white;
-      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       padding: 24px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow);
     }
 
-    .card h3 {
-      margin-top: 0;
+    .icon {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
     }
 
-    .interactive-box {
-      background: white;
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      margin-top: 30px;
-      text-align: center;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    input {
+    .gallery figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
       padding: 12px;
-      width: 100%;
-      max-width: 320px;
-      font-size: 16px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      margin-bottom: 16px;
+      box-shadow: var(--shadow);
     }
 
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
+    .gallery figcaption {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .recent-projects-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .recent-projects-wrap {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .recent-projects-gallery figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .recent-projects-gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .recent-projects-gallery figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
       margin-top: 10px;
     }
 
-    button {
-      padding: 12px 18px;
-      font-size: 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      color: white;
+    .recent-projects-actions {
+      margin-top: 28px;
+      text-align: center;
     }
 
-    .blue-btn {
-      background: #2563eb;
+    .cta-panel {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      text-align: center;
     }
 
-    .green-btn {
-      background: #16a34a;
+    .cta-panel h2 {
+      margin-bottom: 12px;
     }
 
-    .dark-btn {
-      background: #111827;
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
     }
 
-    .message-box,
-    .counter-box {
+    .service-area-box,
+    .about-box,
+    .contact-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .service-area-list {
+      margin: 18px auto 0;
+      max-width: 820px;
+      color: var(--green-dark);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-list {
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+    }
+
+    .contact-list li {
+      margin-bottom: 10px;
+    }
+
+    .contact-quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-top: 20px;
-      padding: 16px;
-      border-radius: 10px;
-      background: #f9fafb;
+    }
+
+    .form {
+      display: grid;
+      gap: 12px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
     }
 
     footer {
-      text-align: center;
-      padding: 30px 20px;
-      color: #6b7280;
+      padding: 24px 0 40px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
       font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .contact-grid,
+      .cards,
+      .gallery,
+      .recent-projects-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <h2>Roman's First Site</h2>
-    <div>
-      <a href="#about">About</a>
-      <a href="#features">Features</a>
-      <a href="#playground">Playground</a>
+  <header>
+    <div class="container nav">
+      <div class="brand">Rainbow Landscaping</div>
+      <nav class="nav-links">
+        <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+        <a href="#about" data-en="About" data-es="Nosotros">About</a>
+        <a href="#work" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</a>
+        <a href="projects.html" data-en="Projects" data-es="Proyectos">Projects</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+        <button class="lang-toggle" id="langToggle">ES</button>
+        <a class="btn" href="tel:13853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <section class="hero" id="about">
-    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Laptop workspace" />
-    <h1>Welcome to my first real website</h1>
-    <p>
-      I’m learning how to build websites in VS Code, style them with CSS,
-      and make them interactive with JavaScript.
-    </p>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" data-en="Free Estimates" data-es="Estimados Gratis">Free Estimates</div>
+          <h1 data-en="Hi, I'm Carlos. I help Utah Valley homeowners with clean, reliable landscaping and sprinkler work." data-es="Hola, soy Carlos. Ayudo a familias de Utah Valley con jardinería y trabajos de riego limpios y confiables.">Hi, I'm Carlos. I help Utah Valley homeowners with clean, reliable landscaping and sprinkler work.</h1>
+          <p class="lead" data-en="At Rainbow Landscaping, I focus on simple, honest work that helps your yard look better, water better, and feel easier to take care of. I can help with landscaping, sprinkler installation, and sprinkler repairs." data-es="En Rainbow Landscaping me enfoco en trabajo simple y honesto para que su patio se vea mejor, riegue mejor y sea más fácil de mantener. Le puedo ayudar con jardinería, instalación de riego y reparación de riego.">At Rainbow Landscaping, I focus on simple, honest work that helps your yard look better, water better, and feel easier to take care of. I can help with landscaping, sprinkler installation, and sprinkler repairs.</p>
+          <div class="hero-meta">
+            <span data-en="Service Area: Utah Valley and surrounding communities" data-es="Área de Servicio: Utah Valley y comunidades cercanas">Service Area: Utah Valley and surrounding communities</span>
+            <span data-en="Free estimates available. Se habla español." data-es="Estimados gratis disponibles. Se habla español.">Free estimates available. Se habla español.</span>
+          </div>
+          <p class="hero-actions-copy" data-en="Call or text for a free estimate" data-es="Llame o mande texto para un estimado gratis">Call or text for a free estimate</p>
+          <div class="hero-actions">
+            <a class="btn" href="tel:13853497297" data-en="Call Carlos" data-es="Llamar a Carlos">Call Carlos</a>
+            <a class="btn secondary" href="sms:13853497297" data-en="Text Carlos" data-es="Mandar Texto a Carlos">Text Carlos</a>
+          </div>
+        </div>
 
-  <section class="section" id="features">
-    <h2>What this site includes</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>HTML</h3>
-        <p>The structure of the page like headings, text, buttons, and sections.</p>
+        <div class="hero-card">
+          <img src="../Project Photos- Carlos Z/backyard1.jpg" alt="Freshly completed backyard landscaping project" />
+          <p data-en="Real project photo from Rainbow Landscaping." data-es="Foto real de un proyecto de Rainbow Landscaping.">Real project photo from Rainbow Landscaping.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>CSS</h3>
-        <p>The design part that controls colors, spacing, layout, and style.</p>
-      </div>
-      <div class="card">
-        <h3>JavaScript</h3>
-        <p>The interactive part that responds when you click buttons or type things.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" id="playground">
-    <div class="interactive-box">
-      <h2>Interactive Playground</h2>
-      <p>Try typing your name and clicking the buttons.</p>
+    <section id="services">
+      <div class="container">
+        <h2 data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
+        <p class="section-copy" data-en="We focus on straightforward, professional outdoor services that improve curb appeal, support healthy lawns, and keep your irrigation working the way it should." data-es="Nos enfocamos en servicios exteriores directos y profesionales que mejoran la apariencia de su propiedad, ayudan a tener césped saludable y mantienen su riego funcionando como debe.">We focus on straightforward, professional outdoor services that improve curb appeal, support healthy lawns, and keep your irrigation working the way it should.</p>
 
-      <input type="text" id="nameInput" placeholder="Type your name here" />
-
-      <div class="button-group">
-        <button class="blue-btn" onclick="showName()">Show My Name</button>
-        <button class="green-btn" onclick="countClick()">Click Counter</button>
-        <button class="dark-btn" onclick="changeTheme()">Change Theme</button>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">🌿</div>
+            <h3 data-en="Landscaping Services" data-es="Servicios de Jardinería">Landscaping Services</h3>
+            <p data-en="From yard cleanups to visual improvements, we help create outdoor spaces that look tidy, welcoming, and professionally maintained." data-es="Desde limpiezas de jardín hasta mejoras visuales, ayudamos a crear espacios exteriores limpios, agradables y mantenidos profesionalmente.">From yard cleanups to visual improvements, we help create outdoor spaces that look tidy, welcoming, and professionally maintained.</p>
+          </div>
+          <div class="card">
+            <div class="icon">💧</div>
+            <h3 data-en="New Sprinkler Systems" data-es="Sistemas de Riego Nuevos">New Sprinkler Systems</h3>
+            <p data-en="We install sprinkler systems designed for efficient coverage, healthier lawns, and easier ongoing watering for your property." data-es="Instalamos sistemas de riego diseñados para una cobertura eficiente, césped más saludable y un riego más fácil para su propiedad.">We install sprinkler systems designed for efficient coverage, healthier lawns, and easier ongoing watering for your property.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🔧</div>
+            <h3 data-en="Sprinkler Repairs" data-es="Reparación de Riego">Sprinkler Repairs</h3>
+            <p data-en="We diagnose and repair broken heads, leaks, damaged lines, and uneven watering so your system runs reliably again." data-es="Diagnosticamos y reparamos aspersores dañados, fugas, líneas rotas y riego desigual para que su sistema vuelva a funcionar bien.">We diagnose and repair broken heads, leaks, damaged lines, and uneven watering so your system runs reliably again.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="message-box">
-        <p id="message">Your message will show here.</p>
-      </div>
+    <section id="recent-projects">
+      <div class="container">
+        <div class="recent-projects-wrap">
+          <h2 data-en="Recent Projects" data-es="Proyectos Recientes">Recent Projects</h2>
+          <p class="section-copy" data-en="Take a quick look at a couple of recent Rainbow Landscaping projects and the clean, finished results we deliver." data-es="Mira rápidamente un par de proyectos recientes de Rainbow Landscaping y los resultados limpios y terminados que ofrecemos.">Take a quick look at a couple of recent Rainbow Landscaping projects and the clean, finished results we deliver.</p>
 
-      <div class="counter-box">
-        <p>Button clicks: <span id="count">0</span></p>
+          <div class="recent-projects-gallery">
+            <figure>
+              <img src="./project-photos/backyard1.jpg" alt="Recent backyard landscaping project" />
+              <figcaption data-en="Fresh backyard landscaping with clean lines and a finished look." data-es="Jardinería reciente de patio trasero con líneas limpias y un acabado completo.">Fresh backyard landscaping with clean lines and a finished look.</figcaption>
+            </figure>
+            <figure>
+              <img src="./project-photos/backyard2.jpg" alt="Another recent backyard landscaping project" />
+              <figcaption data-en="Updated outdoor space with simple, polished landscaping details." data-es="Espacio exterior renovado con detalles de jardinería simples y bien terminados.">Updated outdoor space with simple, polished landscaping details.</figcaption>
+            </figure>
+          </div>
+
+          <div class="recent-projects-actions">
+            <a class="btn secondary" href="projects.html" data-en="View All Projects" data-es="Ver Todos los Proyectos">View All Projects</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-box">
+          <h2 data-en="About Rainbow Landscaping" data-es="Sobre Rainbow Landscaping">About Rainbow Landscaping</h2>
+          <p class="section-copy" style="margin-bottom:0;" data-en="I'm Carlos, and I started Rainbow Landscaping to help local homeowners get quality work without the runaround. I believe in showing up, communicating clearly, and treating each yard like it matters. Whether you need a small cleanup, a new sprinkler system, or repairs, I want the job to feel straightforward and done right." data-es="Soy Carlos y empecé Rainbow Landscaping para ayudar a familias locales a recibir trabajo de calidad sin complicaciones. Creo en llegar a tiempo, comunicarme claramente y tratar cada jardín como algo importante. Ya sea que necesite una limpieza pequeña, un sistema de riego nuevo o una reparación, quiero que el trabajo se sienta claro y bien hecho.">I'm Carlos, and I started Rainbow Landscaping to help local homeowners get quality work without the runaround. I believe in showing up, communicating clearly, and treating each yard like it matters. Whether you need a small cleanup, a new sprinkler system, or repairs, I want the job to feel straightforward and done right.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-area">
+      <div class="container">
+        <div class="service-area-box">
+          <h2 data-en="Service Area" data-es="Área de Servicio">Service Area</h2>
+          <p class="section-copy" style="margin-bottom:0;" data-en="Rainbow Landscaping proudly serves Utah Valley and surrounding communities with professional landscaping, sprinkler installation, and sprinkler repair services." data-es="Rainbow Landscaping sirve con orgullo a Utah Valley y comunidades cercanas con servicios profesionales de jardinería, instalación de riego y reparación de riego.">Rainbow Landscaping proudly serves Utah Valley and surrounding communities with professional landscaping, sprinkler installation, and sprinkler repair services.</p>
+          <p class="service-area-list" data-en="Lehi, Saratoga Springs, American Fork, Eagle Mountain, Orem, Provo, and Spanish Fork" data-es="Lehi, Saratoga Springs, American Fork, Eagle Mountain, Orem, Provo y Spanish Fork">Lehi, Saratoga Springs, American Fork, Eagle Mountain, Orem, Provo, and Spanish Fork</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta">
+      <div class="container">
+        <div class="cta-panel">
+          <h2 data-en="Ready to Start Your Project?" data-es="¿Listo Para Comenzar Su Proyecto?">Ready to Start Your Project?</h2>
+          <p class="section-copy" style="margin-bottom:0;" data-en="Reach out today for a free estimate, confirm service availability in Utah Valley and surrounding communities, or use the phone contact option to get your project started." data-es="Comuníquese hoy para un estimado gratis, confirme disponibilidad de servicio en Utah Valley y comunidades cercanas, o use la opción de contacto por teléfono para comenzar su proyecto.">Reach out today for a free estimate, confirm service availability in Utah Valley and surrounding communities, or use the phone contact option to get your project started.</p>
+          <div class="cta-actions">
+            <a class="btn" href="#contact" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</a>
+            <a class="btn secondary" href="tel:13853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2 data-en="Our Work" data-es="Nuestro Trabajo">Our Work</h2>
+        <p class="section-copy" data-en="A few recent landscaping and sprinkler projects from Rainbow Landscaping." data-es="Algunos proyectos recientes de jardinería y riego de Rainbow Landscaping.">A few recent landscaping and sprinkler projects from Rainbow Landscaping.</p>
+
+        <div class="gallery">
+          <figure>
+            <img src="../Project Photos- Carlos Z/Project 1/IMG_5148.jpeg" alt="Finished landscaping project with clean edging and rock work" />
+            <figcaption data-en="Project 1 completed landscaping work" data-es="Proyecto 1 trabajo de jardinería terminado">Project 1 completed landscaping work</figcaption>
+          </figure>
+          <figure>
+            <img src="../Project Photos- Carlos Z/Project 3/IMG_4975.jpeg" alt="Sprinkler and lawn project in progress" />
+            <figcaption data-en="Project 3 sprinkler and lawn improvement" data-es="Proyecto 3 mejora de césped y riego">Project 3 sprinkler and lawn improvement</figcaption>
+          </figure>
+          <figure>
+            <img src="../Project Photos- Carlos Z/Project 4/FullSizeRender (16).jpg" alt="Backyard landscaping project with new installed features" />
+            <figcaption data-en="Project 4 backyard upgrade" data-es="Proyecto 4 renovación de patio">Project 4 backyard upgrade</figcaption>
+          </figure>
+          <figure>
+            <img src="../Project Photos- Carlos Z/Tree Project /Before 3.jpg" alt="Tree area before landscaping work" />
+            <figcaption data-en="Tree project before" data-es="Proyecto de árbol antes">Tree project before</figcaption>
+          </figure>
+          <figure>
+            <img src="../Project Photos- Carlos Z/Tree Project /After 3.jpg" alt="Tree area after landscaping work" />
+            <figcaption data-en="Tree project after" data-es="Proyecto de árbol después">Tree project after</figcaption>
+          </figure>
+          <figure>
+            <img src="../Project Photos- Carlos Z/Back yard lawn Project /after1.jpg" alt="Backyard lawn project after completion" />
+            <figcaption data-en="Backyard lawn project after" data-es="Proyecto de césped trasero después">Backyard lawn project after</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-box">
+        <div class="contact-grid">
+          <div>
+            <h2 style="text-align:left;" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</h2>
+            <p class="muted" data-en="Call or send a message today to talk about your landscaping or sprinkler project." data-es="Llama o manda un mensaje hoy para hablar de tu proyecto de jardinería o riego.">Call or send a message today to talk about your landscaping or sprinkler project.</p>
+            <ul class="contact-list">
+              <li><strong data-en="Phone:" data-es="Teléfono:">Phone:</strong> <a href="tel:3853497297">385-349-7297</a></li>
+              <li><strong data-en="Business:" data-es="Negocio:">Business:</strong> Rainbow Landscaping</li>
+              <li><strong data-en="Languages:" data-es="Idiomas:">Languages:</strong> <span data-en="Spanish, English" data-es="Español, Inglés">Spanish, English</span></li>
+              <li><strong data-en="Service Area:" data-es="Área de Servicio:">Service Area:</strong> <span data-en="Utah Valley and surrounding communities" data-es="Utah Valley y comunidades cercanas">Utah Valley and surrounding communities</span></li>
+            </ul>
+            <div class="contact-quick-actions">
+              <a class="btn" href="tel:13853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
+              <a class="btn secondary" href="sms:13853497297" data-en="Text Now" data-es="Enviar Texto">Text Now</a>
+            </div>
+          </div>
+
+          <form class="form" onsubmit="event.preventDefault(); alert(currentLang === 'en' ? 'Thanks! Replace this form with Wix Forms or your contact method.' : '¡Gracias! Reemplaza este formulario con Wix Forms o tu método de contacto.');">
+            <input type="text" placeholder="Name / Nombre" />
+            <input type="tel" placeholder="Phone / Teléfono" />
+            <textarea placeholder="Tell us about your project / Cuéntanos sobre tu proyecto"></textarea>
+            <button class="btn" type="submit" data-en="Send Request" data-es="Enviar Solicitud">Send Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    Built by me in VS Code 😎
+    <div class="container">
+      <p data-en="Rainbow Landscaping • Free Estimates • Call 385-349-7297" data-es="Rainbow Landscaping • Estimados Gratis • Llame al 385-349-7297">Rainbow Landscaping • Free Estimates • Call 385-349-7297</p>
+    </div>
   </footer>
 
   <script>
-    let clickCount = 0;
-    let darkMode = false;
+    const savedLang = localStorage.getItem('siteLanguage');
+    let currentLang = savedLang === 'es' ? 'es' : 'en';
+    const toggleBtn = document.getElementById('langToggle');
 
-    function showName() {
-      const name = document.getElementById("nameInput").value.trim();
-      const message = document.getElementById("message");
-
-      if (name === "") {
-        message.textContent = "Please type your name first.";
-      } else {
-        message.textContent = "Welcome, " + name + "! Glad you're here.";
-      }
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('siteLanguage', lang);
+      document.documentElement.lang = lang === 'en' ? 'en' : 'es';
+      document.title = lang === 'en' ? 'Rainbow Landscaping | Free Estimates' : 'Rainbow Landscaping | Estimados Gratis';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(lang === 'en' ? 'data-en' : 'data-es');
+      });
+      toggleBtn.textContent = lang === 'en' ? 'ES' : 'EN';
     }
 
-    function countClick() {
-      clickCount++;
-      document.getElementById("count").textContent = clickCount;
-    }
+    toggleBtn.addEventListener('click', () => {
+      setLanguage(currentLang === 'en' ? 'es' : 'en');
+    });
 
-    function changeTheme() {
-      darkMode = !darkMode;
-      const body = document.body;
-      const cards = document.querySelectorAll(".card");
-      const interactiveBox = document.querySelector(".interactive-box");
-      const nav = document.querySelector("nav");
-
-      if (darkMode) {
-        body.style.background = "#111827";
-        body.style.color = "#ffffff";
-        nav.style.background = "#000000";
-        interactiveBox.style.background = "#1f2937";
-        document.getElementById("message").textContent = "Dark mode activated.";
-
-        cards.forEach(card => {
-          card.style.background = "#1f2937";
-          card.style.color = "#ffffff";
-        });
-      } else {
-        body.style.background = "#f3f4f6";
-        body.style.color = "#222";
-        nav.style.background = "#111827";
-        interactiveBox.style.background = "#ffffff";
-        document.getElementById("message").textContent = "Light mode activated.";
-
-        cards.forEach(card => {
-          card.style.background = "#ffffff";
-          card.style.color = "#222";
-        });
-      }
-    }
+    setLanguage(currentLang);
   </script>
 </body>
 </html>
