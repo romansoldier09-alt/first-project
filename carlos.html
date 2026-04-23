@@ -147,11 +147,37 @@
       max-width: 640px;
     }
 
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 14px;
+      color: var(--green-dark);
+      font-size: 0.94rem;
+      font-weight: 600;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    }
+
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       margin-top: 24px;
+    }
+
+    .hero-actions-copy {
+      margin: 18px 0 0;
+      color: var(--green-dark);
+      font-weight: 600;
     }
 
     .hero-card {
@@ -219,6 +245,70 @@
       margin-top: 8px;
     }
 
+    .recent-projects-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .recent-projects-wrap {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .recent-projects-gallery figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .recent-projects-gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .recent-projects-gallery figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .recent-projects-actions {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .cta-panel {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .cta-panel h2 {
+      margin-bottom: 12px;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .service-area-box,
     .about-box,
     .contact-box {
       background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
@@ -226,6 +316,14 @@
       border-radius: 24px;
       padding: 30px;
       box-shadow: var(--shadow);
+    }
+
+    .service-area-list {
+      margin: 18px auto 0;
+      max-width: 820px;
+      color: var(--green-dark);
+      font-weight: 600;
+      text-align: center;
     }
 
     .contact-grid {
@@ -243,6 +341,13 @@
 
     .contact-list li {
       margin-bottom: 10px;
+    }
+
+    .contact-quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
     }
 
     .form {
@@ -279,7 +384,8 @@
       .hero-grid,
       .contact-grid,
       .cards,
-      .gallery {
+      .gallery,
+      .recent-projects-gallery {
         grid-template-columns: 1fr;
       }
 
@@ -298,9 +404,10 @@
         <a href="#services" data-en="Services" data-es="Servicios">Services</a>
         <a href="#about" data-en="About" data-es="Nosotros">About</a>
         <a href="#work" data-en="Our Work" data-es="Nuestro Trabajo">Our Work</a>
+        <a href="projects.html" data-en="Projects" data-es="Proyectos">Projects</a>
         <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
         <button class="lang-toggle" id="langToggle">ES</button>
-        <a class="btn" href="tel:3853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
+        <a class="btn" href="tel:13853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
       </nav>
     </div>
   </header>
@@ -310,17 +417,22 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow" data-en="Free Estimates" data-es="Estimados Gratis">Free Estimates</div>
-          <h1 data-en="Reliable Landscaping & Sprinkler Services" data-es="Servicios Confiables de Jardinería y Riego">Reliable Landscaping & Sprinkler Services</h1>
-          <p class="lead" data-en="Rainbow Landscaping helps homeowners with landscaping services, new sprinkler systems, and sprinkler repairs. Honest work, professional service, and free estimates." data-es="Rainbow Landscaping ayuda a los dueños de casa con jardinería, instalación de sistemas de riego nuevos y reparación de riego. Trabajo honesto, servicio profesional y estimados gratis.">Rainbow Landscaping helps homeowners with landscaping services, new sprinkler systems, and sprinkler repairs. Honest work, professional service, and free estimates.</p>
+          <h1 data-en="Hi, I'm Carlos. I help Utah Valley homeowners with clean, reliable landscaping and sprinkler work." data-es="Hola, soy Carlos. Ayudo a familias de Utah Valley con jardinería y trabajos de riego limpios y confiables.">Hi, I'm Carlos. I help Utah Valley homeowners with clean, reliable landscaping and sprinkler work.</h1>
+          <p class="lead" data-en="At Rainbow Landscaping, I focus on simple, honest work that helps your yard look better, water better, and feel easier to take care of. I can help with landscaping, sprinkler installation, and sprinkler repairs." data-es="En Rainbow Landscaping me enfoco en trabajo simple y honesto para que su patio se vea mejor, riegue mejor y sea más fácil de mantener. Le puedo ayudar con jardinería, instalación de riego y reparación de riego.">At Rainbow Landscaping, I focus on simple, honest work that helps your yard look better, water better, and feel easier to take care of. I can help with landscaping, sprinkler installation, and sprinkler repairs.</p>
+          <div class="hero-meta">
+            <span data-en="Service Area: Utah Valley and surrounding communities" data-es="Área de Servicio: Utah Valley y comunidades cercanas">Service Area: Utah Valley and surrounding communities</span>
+            <span data-en="Free estimates available. Se habla español." data-es="Estimados gratis disponibles. Se habla español.">Free estimates available. Se habla español.</span>
+          </div>
+          <p class="hero-actions-copy" data-en="Call or text for a free estimate" data-es="Llame o mande texto para un estimado gratis">Call or text for a free estimate</p>
           <div class="hero-actions">
-            <a class="btn" href="tel:3853497297" data-en="Call 385-349-7297" data-es="Llame al 385-349-7297">Call 385-349-7297</a>
-            <a class="btn secondary" href="#contact" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</a>
+            <a class="btn" href="tel:13853497297" data-en="Call Carlos" data-es="Llamar a Carlos">Call Carlos</a>
+            <a class="btn secondary" href="sms:13853497297" data-en="Text Carlos" data-es="Mandar Texto a Carlos">Text Carlos</a>
           </div>
         </div>
 
         <div class="hero-card">
-          <img src="truck-main.jpg" alt="Rainbow Landscaping truck" />
-          <p data-en="Replace this image with Carlos's best truck or jobsite photo." data-es="Reemplaza esta imagen con la mejor foto del camión o de un trabajo de Carlos.">Replace this image with Carlos's best truck or jobsite photo.</p>
+          <img src="../Project Photos- Carlos Z/backyard1.jpg" alt="Freshly completed backyard landscaping project" />
+          <p data-en="Real project photo from Rainbow Landscaping." data-es="Foto real de un proyecto de Rainbow Landscaping.">Real project photo from Rainbow Landscaping.</p>
         </div>
       </div>
     </section>
@@ -328,23 +440,47 @@
     <section id="services">
       <div class="container">
         <h2 data-en="Our Services" data-es="Nuestros Servicios">Our Services</h2>
-        <p class="section-copy" data-en="Simple, reliable outdoor services to keep your yard looking great and your sprinkler system working right." data-es="Servicios simples y confiables para mantener su jardín en excelente estado y su sistema de riego funcionando bien.">Simple, reliable outdoor services to keep your yard looking great and your sprinkler system working right.</p>
+        <p class="section-copy" data-en="We focus on straightforward, professional outdoor services that improve curb appeal, support healthy lawns, and keep your irrigation working the way it should." data-es="Nos enfocamos en servicios exteriores directos y profesionales que mejoran la apariencia de su propiedad, ayudan a tener césped saludable y mantienen su riego funcionando como debe.">We focus on straightforward, professional outdoor services that improve curb appeal, support healthy lawns, and keep your irrigation working the way it should.</p>
 
         <div class="cards">
           <div class="card">
             <div class="icon">🌿</div>
             <h3 data-en="Landscaping Services" data-es="Servicios de Jardinería">Landscaping Services</h3>
-            <p data-en="General landscaping help to improve and maintain the look of your yard." data-es="Ayuda general de jardinería para mejorar y mantener la apariencia de su jardín.">General landscaping help to improve and maintain the look of your yard.</p>
+            <p data-en="From yard cleanups to visual improvements, we help create outdoor spaces that look tidy, welcoming, and professionally maintained." data-es="Desde limpiezas de jardín hasta mejoras visuales, ayudamos a crear espacios exteriores limpios, agradables y mantenidos profesionalmente.">From yard cleanups to visual improvements, we help create outdoor spaces that look tidy, welcoming, and professionally maintained.</p>
           </div>
           <div class="card">
             <div class="icon">💧</div>
             <h3 data-en="New Sprinkler Systems" data-es="Sistemas de Riego Nuevos">New Sprinkler Systems</h3>
-            <p data-en="Installation of new sprinkler systems for healthy, efficient watering." data-es="Instalación de sistemas de riego nuevos para un riego eficiente y saludable.">Installation of new sprinkler systems for healthy, efficient watering.</p>
+            <p data-en="We install sprinkler systems designed for efficient coverage, healthier lawns, and easier ongoing watering for your property." data-es="Instalamos sistemas de riego diseñados para una cobertura eficiente, césped más saludable y un riego más fácil para su propiedad.">We install sprinkler systems designed for efficient coverage, healthier lawns, and easier ongoing watering for your property.</p>
           </div>
           <div class="card">
             <div class="icon">🔧</div>
             <h3 data-en="Sprinkler Repairs" data-es="Reparación de Riego">Sprinkler Repairs</h3>
-            <p data-en="Fast repairs for broken sprinkler heads, leaks, lines, and watering issues." data-es="Reparaciones rápidas para aspersores dañados, fugas, líneas y problemas de riego.">Fast repairs for broken sprinkler heads, leaks, lines, and watering issues.</p>
+            <p data-en="We diagnose and repair broken heads, leaks, damaged lines, and uneven watering so your system runs reliably again." data-es="Diagnosticamos y reparamos aspersores dañados, fugas, líneas rotas y riego desigual para que su sistema vuelva a funcionar bien.">We diagnose and repair broken heads, leaks, damaged lines, and uneven watering so your system runs reliably again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recent-projects">
+      <div class="container">
+        <div class="recent-projects-wrap">
+          <h2 data-en="Recent Projects" data-es="Proyectos Recientes">Recent Projects</h2>
+          <p class="section-copy" data-en="Take a quick look at a couple of recent Rainbow Landscaping projects and the clean, finished results we deliver." data-es="Mira rápidamente un par de proyectos recientes de Rainbow Landscaping y los resultados limpios y terminados que ofrecemos.">Take a quick look at a couple of recent Rainbow Landscaping projects and the clean, finished results we deliver.</p>
+
+          <div class="recent-projects-gallery">
+            <figure>
+              <img src="./project-photos/backyard1.jpg" alt="Recent backyard landscaping project" />
+              <figcaption data-en="Fresh backyard landscaping with clean lines and a finished look." data-es="Jardinería reciente de patio trasero con líneas limpias y un acabado completo.">Fresh backyard landscaping with clean lines and a finished look.</figcaption>
+            </figure>
+            <figure>
+              <img src="./project-photos/backyard2.jpg" alt="Another recent backyard landscaping project" />
+              <figcaption data-en="Updated outdoor space with simple, polished landscaping details." data-es="Espacio exterior renovado con detalles de jardinería simples y bien terminados.">Updated outdoor space with simple, polished landscaping details.</figcaption>
+            </figure>
+          </div>
+
+          <div class="recent-projects-actions">
+            <a class="btn secondary" href="projects.html" data-en="View All Projects" data-es="Ver Todos los Proyectos">View All Projects</a>
           </div>
         </div>
       </div>
@@ -354,7 +490,30 @@
       <div class="container">
         <div class="about-box">
           <h2 data-en="About Rainbow Landscaping" data-es="Sobre Rainbow Landscaping">About Rainbow Landscaping</h2>
-          <p class="section-copy" style="margin-bottom:0;" data-en="At Rainbow Landscaping, we take pride in helping customers keep their yards looking their best. We focus on dependable service, quality work, and making it easy for homeowners to get the help they need." data-es="En Rainbow Landscaping nos enorgullece ayudar a nuestros clientes a mantener sus jardines en las mejores condiciones. Nos enfocamos en servicio confiable, trabajo de calidad y en hacer fácil el proceso para cada cliente.">At Rainbow Landscaping, we take pride in helping customers keep their yards looking their best. We focus on dependable service, quality work, and making it easy for homeowners to get the help they need.</p>
+          <p class="section-copy" style="margin-bottom:0;" data-en="I'm Carlos, and I started Rainbow Landscaping to help local homeowners get quality work without the runaround. I believe in showing up, communicating clearly, and treating each yard like it matters. Whether you need a small cleanup, a new sprinkler system, or repairs, I want the job to feel straightforward and done right." data-es="Soy Carlos y empecé Rainbow Landscaping para ayudar a familias locales a recibir trabajo de calidad sin complicaciones. Creo en llegar a tiempo, comunicarme claramente y tratar cada jardín como algo importante. Ya sea que necesite una limpieza pequeña, un sistema de riego nuevo o una reparación, quiero que el trabajo se sienta claro y bien hecho.">I'm Carlos, and I started Rainbow Landscaping to help local homeowners get quality work without the runaround. I believe in showing up, communicating clearly, and treating each yard like it matters. Whether you need a small cleanup, a new sprinkler system, or repairs, I want the job to feel straightforward and done right.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-area">
+      <div class="container">
+        <div class="service-area-box">
+          <h2 data-en="Service Area" data-es="Área de Servicio">Service Area</h2>
+          <p class="section-copy" style="margin-bottom:0;" data-en="Rainbow Landscaping proudly serves Utah Valley and surrounding communities with professional landscaping, sprinkler installation, and sprinkler repair services." data-es="Rainbow Landscaping sirve con orgullo a Utah Valley y comunidades cercanas con servicios profesionales de jardinería, instalación de riego y reparación de riego.">Rainbow Landscaping proudly serves Utah Valley and surrounding communities with professional landscaping, sprinkler installation, and sprinkler repair services.</p>
+          <p class="service-area-list" data-en="Lehi, Saratoga Springs, American Fork, Eagle Mountain, Orem, Provo, and Spanish Fork" data-es="Lehi, Saratoga Springs, American Fork, Eagle Mountain, Orem, Provo y Spanish Fork">Lehi, Saratoga Springs, American Fork, Eagle Mountain, Orem, Provo, and Spanish Fork</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta">
+      <div class="container">
+        <div class="cta-panel">
+          <h2 data-en="Ready to Start Your Project?" data-es="¿Listo Para Comenzar Su Proyecto?">Ready to Start Your Project?</h2>
+          <p class="section-copy" style="margin-bottom:0;" data-en="Reach out today for a free estimate, confirm service availability in Utah Valley and surrounding communities, or use the phone contact option to get your project started." data-es="Comuníquese hoy para un estimado gratis, confirme disponibilidad de servicio en Utah Valley y comunidades cercanas, o use la opción de contacto por teléfono para comenzar su proyecto.">Reach out today for a free estimate, confirm service availability in Utah Valley and surrounding communities, or use the phone contact option to get your project started.</p>
+          <div class="cta-actions">
+            <a class="btn" href="#contact" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</a>
+            <a class="btn secondary" href="tel:13853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
+          </div>
         </div>
       </div>
     </section>
@@ -362,20 +521,32 @@
     <section id="work">
       <div class="container">
         <h2 data-en="Our Work" data-es="Nuestro Trabajo">Our Work</h2>
-        <p class="section-copy" data-en="Start with truck photos now. Later, replace these with job photos, sprinkler installs, and before-and-after yard transformations." data-es="Empieza con fotos de los camiones por ahora. Después, reemplázalas con fotos de trabajos, instalaciones de riego y cambios de jardín antes y después.">Start with truck photos now. Later, replace these with job photos, sprinkler installs, and before-and-after yard transformations.</p>
+        <p class="section-copy" data-en="A few recent landscaping and sprinkler projects from Rainbow Landscaping." data-es="Algunos proyectos recientes de jardinería y riego de Rainbow Landscaping.">A few recent landscaping and sprinkler projects from Rainbow Landscaping.</p>
 
         <div class="gallery">
           <figure>
-            <img src="truck-main.jpg" alt="Rainbow Landscaping truck front view" />
-            <figcaption data-en="Professional branded work truck" data-es="Camión de trabajo con imagen profesional">Professional branded work truck</figcaption>
+            <img src="../Project Photos- Carlos Z/Project 1/IMG_5148.jpeg" alt="Finished landscaping project with clean edging and rock work" />
+            <figcaption data-en="Project 1 completed landscaping work" data-es="Proyecto 1 trabajo de jardinería terminado">Project 1 completed landscaping work</figcaption>
           </figure>
           <figure>
-            <img src="truck-side.jpg" alt="Rainbow Landscaping truck side view" />
-            <figcaption data-en="Business branding and contact info" data-es="Marca del negocio e información de contacto">Business branding and contact info</figcaption>
+            <img src="../Project Photos- Carlos Z/Project 3/IMG_4975.jpeg" alt="Sprinkler and lawn project in progress" />
+            <figcaption data-en="Project 3 sprinkler and lawn improvement" data-es="Proyecto 3 mejora de césped y riego">Project 3 sprinkler and lawn improvement</figcaption>
           </figure>
           <figure>
-            <img src="sprinkler-rainbow.jpg" alt="Sprinklers creating a rainbow in the sunlight" />
-            <figcaption data-en="Add a future sprinkler photo with a rainbow effect" data-es="Agrega una futura foto de aspersores con efecto de arcoíris">Add a future sprinkler photo with a rainbow effect</figcaption>
+            <img src="../Project Photos- Carlos Z/Project 4/FullSizeRender (16).jpg" alt="Backyard landscaping project with new installed features" />
+            <figcaption data-en="Project 4 backyard upgrade" data-es="Proyecto 4 renovación de patio">Project 4 backyard upgrade</figcaption>
+          </figure>
+          <figure>
+            <img src="../Project Photos- Carlos Z/Tree Project /Before 3.jpg" alt="Tree area before landscaping work" />
+            <figcaption data-en="Tree project before" data-es="Proyecto de árbol antes">Tree project before</figcaption>
+          </figure>
+          <figure>
+            <img src="../Project Photos- Carlos Z/Tree Project /After 3.jpg" alt="Tree area after landscaping work" />
+            <figcaption data-en="Tree project after" data-es="Proyecto de árbol después">Tree project after</figcaption>
+          </figure>
+          <figure>
+            <img src="../Project Photos- Carlos Z/Back yard lawn Project /after1.jpg" alt="Backyard lawn project after completion" />
+            <figcaption data-en="Backyard lawn project after" data-es="Proyecto de césped trasero después">Backyard lawn project after</figcaption>
           </figure>
         </div>
       </div>
@@ -391,8 +562,12 @@
               <li><strong data-en="Phone:" data-es="Teléfono:">Phone:</strong> <a href="tel:3853497297">385-349-7297</a></li>
               <li><strong data-en="Business:" data-es="Negocio:">Business:</strong> Rainbow Landscaping</li>
               <li><strong data-en="Languages:" data-es="Idiomas:">Languages:</strong> <span data-en="Spanish, English" data-es="Español, Inglés">Spanish, English</span></li>
-              <li><strong data-en="Service Area:" data-es="Área de Servicio:">Service Area:</strong> <span data-en="Add cities here" data-es="Agrega ciudades aquí">Add cities here</span></li>
+              <li><strong data-en="Service Area:" data-es="Área de Servicio:">Service Area:</strong> <span data-en="Utah Valley and surrounding communities" data-es="Utah Valley y comunidades cercanas">Utah Valley and surrounding communities</span></li>
             </ul>
+            <div class="contact-quick-actions">
+              <a class="btn" href="tel:13853497297" data-en="Call Now" data-es="Llamar Ahora">Call Now</a>
+              <a class="btn secondary" href="sms:13853497297" data-en="Text Now" data-es="Enviar Texto">Text Now</a>
+            </div>
           </div>
 
           <form class="form" onsubmit="event.preventDefault(); alert(currentLang === 'en' ? 'Thanks! Replace this form with Wix Forms or your contact method.' : '¡Gracias! Reemplaza este formulario con Wix Forms o tu método de contacto.');">
@@ -404,6 +579,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -413,12 +589,15 @@
   </footer>
 
   <script>
-    let currentLang = 'en';
+    const savedLang = localStorage.getItem('siteLanguage');
+    let currentLang = savedLang === 'es' ? 'es' : 'en';
     const toggleBtn = document.getElementById('langToggle');
 
     function setLanguage(lang) {
       currentLang = lang;
+      localStorage.setItem('siteLanguage', lang);
       document.documentElement.lang = lang === 'en' ? 'en' : 'es';
+      document.title = lang === 'en' ? 'Rainbow Landscaping | Free Estimates' : 'Rainbow Landscaping | Estimados Gratis';
       document.querySelectorAll('[data-en]').forEach(el => {
         el.textContent = el.getAttribute(lang === 'en' ? 'data-en' : 'data-es');
       });
@@ -428,6 +607,8 @@
     toggleBtn.addEventListener('click', () => {
       setLanguage(currentLang === 'en' ? 'es' : 'en');
     });
+
+    setLanguage(currentLang);
   </script>
 </body>
 </html>

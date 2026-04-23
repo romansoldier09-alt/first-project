@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rainbow Landscaping | Our Projects</title>
+  <meta name="description" content="See recent Rainbow Landscaping project photos and completed outdoor work." />
+  <style>
+    :root {
+      --green: #2f7d32;
+      --green-dark: #215b24;
+      --light: #f6faf6;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fff8 0%, #ffffff 100%);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .lang-toggle {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: #fff;
+      color: var(--green-dark);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    main {
+      padding: 56px 0 72px;
+    }
+
+    .hero {
+      padding: 0 0 30px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #eaf6eb;
+      color: var(--green-dark);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .section-copy {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+    }
+
+    .projects-wrap {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .project-section + .project-section {
+      margin-top: 34px;
+      padding-top: 34px;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-section h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+      color: var(--green-dark);
+    }
+
+    .project-section-copy {
+      margin: 0 0 20px;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .project-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      object-fit: cover;
+    }
+
+    .project-copy {
+      padding: 14px 6px 4px;
+    }
+
+    .project-title {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      color: var(--green-dark);
+    }
+
+    .project-card figcaption {
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .actions {
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 0 0 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Rainbow Landscaping</div>
+      <nav class="nav-links">
+        <a href="carlos.html" data-en="Home" data-es="Inicio">Home</a>
+        <a href="projects.html" data-en="Projects" data-es="Proyectos">Projects</a>
+        <button class="lang-toggle" id="langToggle">ES</button>
+        <a class="btn secondary" href="carlos.html" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="eyebrow" data-en="Rainbow Landscaping" data-es="Rainbow Landscaping">Rainbow Landscaping</div>
+        <h1 data-en="My Work" data-es="Mi Trabajo">My Work</h1>
+        <p class="lead" data-en="Here are a few recent projects I've worked on around Utah Valley. I like keeping my work clean, simple, and built to last so homeowners feel good about the final result." data-es="Aquí puede ver algunos proyectos recientes en los que he trabajado en Utah Valley. Me gusta hacer un trabajo limpio, simple y duradero para que las familias se sientan contentas con el resultado final.">
+          Here are a few recent projects I've worked on around Utah Valley. I like keeping my work clean, simple, and built to last so homeowners feel good about the final result.
+        </p>
+      </section>
+
+      <section class="projects-wrap" aria-labelledby="projects-gallery-title">
+        <h2 id="projects-gallery-title" data-en="Project Gallery" data-es="Galería de Proyectos">Project Gallery</h2>
+        <p class="section-copy" data-en="These are the kinds of projects I enjoy doing for local homeowners, from lawn improvements to borders, edging, and tree-area cleanups. Free estimates available. Se habla español." data-es="Estos son los tipos de proyectos que me gusta hacer para familias locales, desde mejoras de césped hasta bordes, delimitación y limpieza de áreas con árboles. Estimados gratis disponibles. Se habla español.">
+          These are the kinds of projects I enjoy doing for local homeowners, from lawn improvements to borders, edging, and tree-area cleanups. Free estimates available. Se habla español.
+        </p>
+
+        <div class="project-section">
+          <h3 data-en="Backyard Lawn Projects" data-es="Proyectos de Césped en Patio Trasero">Backyard Lawn Projects</h3>
+          <p class="project-section-copy" data-en="Backyard lawn work focused on cleaner lines, healthier turf, and a more finished overall presentation." data-es="Trabajos de césped en patios traseros enfocados en líneas más limpias, pasto más saludable y una presentación final más completa.">
+            Backyard lawn work focused on cleaner lines, healthier turf, and a more finished overall presentation.
+          </p>
+          <div class="projects-grid">
+            <figure class="project-card">
+              <img src="./project-photos/backyard-lawn/after1.jpg" alt="Backyard lawn project with refreshed grass and finished landscaping" />
+              <div class="project-copy">
+                <h4 class="project-title" data-en="Backyard Lawn Refresh" data-es="Renovación de Césped en Patio Trasero">Backyard Lawn Refresh</h4>
+                <figcaption data-en="Updated lawn area with a cleaner layout and a more polished backyard finish." data-es="Área de césped renovada con una distribución más limpia y un acabado de patio trasero más pulido.">Updated lawn area with a cleaner layout and a more polished backyard finish.</figcaption>
+              </div>
+            </figure>
+
+            <figure class="project-card">
+              <img src="./project-photos/backyard-lawn/2after.jpg" alt="Finished backyard lawn project with improved outdoor appearance" />
+              <div class="project-copy">
+                <h4 class="project-title" data-en="Finished Lawn Upgrade" data-es="Mejora de Césped Terminada">Finished Lawn Upgrade</h4>
+                <figcaption data-en="Fresh backyard improvement designed to look neat, healthy, and easy to maintain." data-es="Mejora reciente del patio trasero diseñada para verse ordenada, saludable y fácil de mantener.">Fresh backyard improvement designed to look neat, healthy, and easy to maintain.</figcaption>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <h3 data-en="Landscape Borders & Edging" data-es="Bordes y Delimitación de Jardín">Landscape Borders & Edging</h3>
+          <p class="project-section-copy" data-en="Hardscape and barrier work that adds structure, definition, and a more organized look to the yard." data-es="Trabajo de barreras y estructura que agrega definición, orden y una apariencia más organizada al jardín.">
+            Hardscape and barrier work that adds structure, definition, and a more organized look to the yard.
+          </p>
+          <div class="projects-grid">
+            <figure class="project-card">
+              <img src="./project-photos/barrier-project/block project.jpg" alt="Barrier project showing block work in progress" />
+              <div class="project-copy">
+                <h4 class="project-title" data-en="Block Barrier Installation" data-es="Instalación de Barrera de Bloque">Block Barrier Installation</h4>
+                <figcaption data-en="Structured barrier work that helps define space and improve the layout of the yard." data-es="Trabajo estructurado de barrera que ayuda a definir el espacio y mejorar la distribución del jardín.">Structured barrier work that helps define space and improve the layout of the yard.</figcaption>
+              </div>
+            </figure>
+
+            <figure class="project-card">
+              <img src="./project-photos/barrier-project/block project after.jpg" alt="Completed barrier project with finished block landscaping" />
+              <div class="project-copy">
+                <h4 class="project-title" data-en="Finished Barrier Upgrade" data-es="Mejora de Barrera Terminada">Finished Barrier Upgrade</h4>
+                <figcaption data-en="Completed block project with a cleaner, stronger border and a more polished result." data-es="Proyecto de bloque terminado con un borde más limpio, sólido y un resultado más pulido.">Completed block project with a cleaner, stronger border and a more polished result.</figcaption>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <h3 data-en="Tree Projects" data-es="Proyectos de Árboles">Tree Projects</h3>
+          <p class="project-section-copy" data-en="Tree-area improvements that create a tidier focal point and bring more balance to the landscape." data-es="Mejoras en áreas de árboles que crean un punto focal más ordenado y aportan más equilibrio al paisaje.">
+            Tree-area improvements that create a tidier focal point and bring more balance to the landscape.
+          </p>
+          <div class="projects-grid">
+            <figure class="project-card">
+              <img src="./project-photos/tree-project/Before 3.jpg" alt="Tree project area before landscaping improvements" />
+              <div class="project-copy">
+                <h4 class="project-title" data-en="Tree Area Before" data-es="Área del Árbol Antes">Tree Area Before</h4>
+                <figcaption data-en="Original tree space before cleanup and visual improvements were completed." data-es="Espacio original del árbol antes de realizar la limpieza y las mejoras visuales.">Original tree space before cleanup and visual improvements were completed.</figcaption>
+              </div>
+            </figure>
+
+            <figure class="project-card">
+              <img src="./project-photos/tree-project/After 3.jpg" alt="Tree project area after landscaping improvements" />
+              <div class="project-copy">
+                <h4 class="project-title" data-en="Tree Area After" data-es="Área del Árbol Después">Tree Area After</h4>
+                <figcaption data-en="Finished tree area with a cleaner presentation and a more intentional landscape layout." data-es="Área del árbol terminada con una presentación más limpia y una distribución de paisaje más intencional.">Finished tree area with a cleaner presentation and a more intentional landscape layout.</figcaption>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="carlos.html" data-en="Back to Homepage" data-es="Volver al Inicio">Back to Homepage</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p data-en="Rainbow Landscaping • Project Gallery" data-es="Rainbow Landscaping • Galería de Proyectos">Rainbow Landscaping • Project Gallery</p>
+    </div>
+  </footer>
+
+  <script>
+    const savedLang = localStorage.getItem('siteLanguage');
+    let currentLang = savedLang === 'es' ? 'es' : 'en';
+    const toggleBtn = document.getElementById('langToggle');
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('siteLanguage', lang);
+      document.documentElement.lang = lang === 'en' ? 'en' : 'es';
+      document.title = lang === 'en' ? 'Rainbow Landscaping | Our Projects' : 'Rainbow Landscaping | Nuestros Proyectos';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(lang === 'en' ? 'data-en' : 'data-es');
+      });
+      toggleBtn.textContent = lang === 'en' ? 'ES' : 'EN';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      setLanguage(currentLang === 'en' ? 'es' : 'en');
+    });
+
+    setLanguage(currentLang);
+  </script>
+</body>
+</html>
