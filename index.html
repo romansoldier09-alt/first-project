@@ -14,9 +14,8 @@
   <meta name="twitter:description" content="Utah Valley landscaping and sprinkler services with free estimates from Rainbow Landscaping." />
   <style>
     :root {
-      --green: #2f7d32;
+      --green: #8cc63f;
       --green-dark: #215b24;
-      --blue: #2f80ed;
       --light: #f6faf6;
       --text: #1f2937;
       --muted: #6b7280;
@@ -96,41 +95,51 @@
     .btn {
       display: inline-block;
       background: var(--green);
-      color: #fff;
+      color: var(--green-dark);
       padding: 12px 18px;
       border-radius: 999px;
       font-weight: 700;
-      box-shadow: var(--shadow);
+      box-shadow: 0 10px 22px rgba(33, 91, 36, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.36);
     }
 
     .btn.secondary {
       background: #fff;
       color: var(--green-dark);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(140, 198, 63, 0.55);
       box-shadow: none;
     }
 
     .hero {
-      padding: 64px 0 40px;
+      position: relative;
+      min-height: 620px;
+      padding: 88px 0 70px;
       background:
-        radial-gradient(circle at top left, rgba(47, 125, 50, 0.10) 0%, rgba(47, 125, 50, 0) 35%),
-        linear-gradient(180deg, #f8fff8 0%, #ffffff 100%);
+        linear-gradient(90deg, rgba(11, 31, 16, 0.78) 0%, rgba(33, 91, 36, 0.56) 46%, rgba(33, 91, 36, 0.22) 100%),
+        linear-gradient(180deg, rgba(11, 31, 16, 0.18) 0%, rgba(11, 31, 16, 0.40) 100%),
+        url("./project-photos/rainbow-landscaping-sprinkler-hero.jpg") center / cover no-repeat;
+      color: #fff;
+      overflow: hidden;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 34px;
-      align-items: center;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 120px;
+      background: linear-gradient(180deg, rgba(246, 250, 246, 0) 0%, var(--light) 100%);
+      pointer-events: none;
     }
 
     .hero-copy {
+      position: relative;
+      z-index: 1;
       max-width: 640px;
     }
 
     .eyebrow {
       display: inline-block;
-      background: #eaf6eb;
+      background: rgba(255, 255, 255, 0.92);
       color: var(--green-dark);
       padding: 8px 12px;
       border-radius: 999px;
@@ -148,6 +157,21 @@
       font-size: clamp(2rem, 4vw, 3.4rem);
     }
 
+    .brand-title {
+      font-size: clamp(2.75rem, 7vw, 5.7rem);
+      color: #fff;
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.32);
+    }
+
+    .brand-tagline {
+      margin: 0 0 18px;
+      color: #ffffff;
+      font-size: clamp(1.35rem, 3vw, 2.2rem);
+      font-weight: 700;
+      line-height: 1.18;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.28);
+    }
+
     h2 {
       font-size: clamp(1.6rem, 3vw, 2.3rem);
       text-align: center;
@@ -156,7 +180,7 @@
 
     .lead {
       font-size: 1.08rem;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.92);
       max-width: 640px;
     }
 
@@ -170,8 +194,8 @@
     .hero-meta span {
       display: inline-flex;
       align-items: center;
-      background: #fff;
-      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.26);
       border-radius: 999px;
       padding: 9px 14px;
       color: var(--green-dark);
@@ -189,44 +213,9 @@
 
     .hero-actions-copy {
       margin: 18px 0 0;
-      color: var(--green-dark);
+      color: #ffffff;
       font-weight: 600;
-    }
-
-    .hero-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      margin-bottom: 14px;
-      background: linear-gradient(180deg, #eef8ef 0%, #ffffff 100%);
-    }
-
-    .hero-image-wrap::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(47, 125, 50, 0.04) 0%, rgba(255, 255, 255, 0) 45%, rgba(33, 91, 36, 0.08) 100%);
-      pointer-events: none;
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
     }
 
     section {
@@ -287,7 +276,7 @@
     }
 
     .recent-projects-wrap {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      background: linear-gradient(180deg, #ffffff 0%, var(--light) 100%);
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 30px;
@@ -323,7 +312,7 @@
     }
 
     .cta-panel {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      background: linear-gradient(180deg, #ffffff 0%, var(--light) 100%);
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 30px;
@@ -346,7 +335,7 @@
     .service-area-box,
     .about-box,
     .contact-box {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      background: linear-gradient(180deg, #ffffff 0%, var(--light) 100%);
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 30px;
@@ -416,7 +405,6 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid,
       .contact-grid,
       .cards,
       .gallery,
@@ -427,6 +415,14 @@
       .nav {
         align-items: flex-start;
         flex-direction: column;
+      }
+
+      .hero {
+        min-height: 590px;
+        padding: 72px 0 58px;
+        background:
+          linear-gradient(180deg, rgba(11, 31, 16, 0.76) 0%, rgba(33, 91, 36, 0.58) 62%, rgba(33, 91, 36, 0.26) 100%),
+          url("./project-photos/rainbow-landscaping-sprinkler-hero.jpg") center / cover no-repeat;
       }
     }
   </style>
@@ -449,10 +445,11 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="container">
         <div class="hero-copy">
           <div class="eyebrow" data-en="Rainbow Landscaping" data-es="Rainbow Landscaping">Rainbow Landscaping</div>
-          <h1 data-en="Professional Landscaping and Sprinkler Services in Utah Valley" data-es="Servicios Profesionales de Jardinería y Riego en Utah Valley">Professional Landscaping and Sprinkler Services in Utah Valley</h1>
+          <h1 class="brand-title" data-en="Rainbow Landscaping" data-es="Rainbow Landscaping">Rainbow Landscaping</h1>
+          <p class="brand-tagline" data-en="Beautiful Lawns. Healthy Homes." data-es="Céspedes Hermosos. Hogares Saludables.">Beautiful Lawns. Healthy Homes.</p>
           <p class="lead" data-en="Clean, reliable landscaping, sprinkler installs, repairs, and outdoor upgrades that keep your yard looking its best." data-es="Jardinería limpia y confiable, instalación y reparación de riego, y mejoras exteriores para que su patio siempre se vea en su mejor estado.">Clean, reliable landscaping, sprinkler installs, repairs, and outdoor upgrades that keep your yard looking its best.</p>
           <div class="hero-meta">
             <span data-en="Service Area: Utah Valley and surrounding communities" data-es="Área de Servicio: Utah Valley y comunidades cercanas">Service Area: Utah Valley and surrounding communities</span>
@@ -463,18 +460,6 @@
             <a class="btn" href="#contact" data-en="Get a Free Estimate" data-es="Pide un Estimado Gratis">Get a Free Estimate</a>
             <a class="btn secondary" href="./projects.html" data-en="View Projects" data-es="Ver Proyectos">View Projects</a>
           </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-image-wrap">
-            <img
-              src="./project-photos/rainbow-landscaping-sprinkler-head-rainbow.jpg"
-              alt="Sprinkler system installation with rainbow water spray - Rainbow Landscaping"
-              width="1536"
-              height="1024"
-            />
-          </div>
-          <p data-en="Trusted local service for lawns, sprinklers, and outdoor spaces that need dependable care." data-es="Servicio local confiable para césped, riego y espacios exteriores que necesitan buen mantenimiento.">Trusted local service for lawns, sprinklers, and outdoor spaces that need dependable care.</p>
         </div>
       </div>
     </section>

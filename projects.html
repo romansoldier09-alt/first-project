@@ -7,7 +7,7 @@
   <meta name="description" content="See recent Rainbow Landscaping project photos and completed outdoor work." />
   <style>
     :root {
-      --green: #2f7d32;
+      --green: #8cc63f;
       --green-dark: #215b24;
       --light: #f6faf6;
       --text: #1f2937;
@@ -27,7 +27,7 @@
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: linear-gradient(180deg, #f8fff8 0%, #ffffff 100%);
+      background: linear-gradient(180deg, var(--light) 0%, #ffffff 100%);
       line-height: 1.6;
     }
 
@@ -90,17 +90,18 @@
     .btn {
       display: inline-block;
       background: var(--green);
-      color: #fff;
+      color: var(--green-dark);
       padding: 12px 18px;
       border-radius: 999px;
       font-weight: 700;
-      box-shadow: var(--shadow);
+      box-shadow: 0 10px 22px rgba(33, 91, 36, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.36);
     }
 
     .btn.secondary {
       background: #fff;
       color: var(--green-dark);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(140, 198, 63, 0.55);
       box-shadow: none;
     }
 
@@ -115,7 +116,7 @@
 
     .eyebrow {
       display: inline-block;
-      background: #eaf6eb;
+      background: rgba(140, 198, 63, 0.16);
       color: var(--green-dark);
       padding: 8px 12px;
       border-radius: 999px;
@@ -155,7 +156,7 @@
     }
 
     .projects-wrap {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fff8 100%);
+      background: linear-gradient(180deg, #ffffff 0%, var(--light) 100%);
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 30px;
