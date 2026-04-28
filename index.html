@@ -228,11 +228,34 @@
             </div>
           </div>
 
-          <form class="form" onsubmit="event.preventDefault(); alert(currentLang === 'en' ? 'Thanks! Replace this form with Wix Forms or your contact method.' : '¡Gracias! Reemplaza este formulario con Wix Forms o tu método de contacto.');">
-            <input type="text" placeholder="Name / Nombre" />
-            <input type="tel" placeholder="Phone / Teléfono" />
-            <textarea placeholder="Tell us about your project / Cuéntanos sobre tu proyecto"></textarea>
-            <button class="btn" type="submit" data-en="Send Request" data-es="Enviar Solicitud">Send Request</button>
+          <form class="form" action="https://formsubmit.co/carloszavalalandscaping@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Rainbow Landscaping Lead" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="name" placeholder="Full Name / Nombre" required />
+            <input type="email" name="email" placeholder="Email / Correo" />
+            <input type="tel" name="phone" placeholder="Phone / Teléfono" required />
+            <input type="text" name="city" placeholder="City / Ciudad" required />
+            <select name="project_type" required>
+              <option value="" disabled selected data-en="Project Type / Tipo de proyecto" data-es="Tipo de proyecto">Project Type / Tipo de proyecto</option>
+              <option value="Landscaping" data-en="Landscaping" data-es="Jardinería">Landscaping</option>
+              <option value="Sprinkler Repair" data-en="Sprinkler Repair" data-es="Reparación de Riego">Sprinkler Repair</option>
+              <option value="Sprinkler Installation" data-en="Sprinkler Installation" data-es="Instalación de Riego">Sprinkler Installation</option>
+              <option value="Sod / Grass" data-en="Sod / Grass" data-es="Pasto / Césped">Sod / Grass</option>
+              <option value="Yard Cleanup" data-en="Yard Cleanup" data-es="Limpieza de Patio">Yard Cleanup</option>
+              <option value="Concrete / Curbing" data-en="Concrete / Curbing" data-es="Concreto / Bordes">Concrete / Curbing</option>
+              <option value="Other" data-en="Other" data-es="Otro">Other</option>
+            </select>
+            <textarea name="message" placeholder="Project Description / Descripción del proyecto" required></textarea>
+            <select name="contact_method" required>
+              <option value="" disabled selected data-en="Preferred Contact Method" data-es="Método de Contacto Preferido">Preferred Contact Method</option>
+              <option value="Call" data-en="Call" data-es="Llamada">Call</option>
+              <option value="Text" data-en="Text" data-es="Texto">Text</option>
+              <option value="Email" data-en="Email" data-es="Correo">Email</option>
+            </select>
+            <input type="text" name="preferred_time" placeholder="Preferred Day/Time / Día/Hora Preferido" />
+            <input type="text" name="budget" placeholder="Estimated Budget (optional) / Presupuesto Estimado (opcional)" />
+            <button class="btn" type="submit" data-en="Book My Free Estimate" data-es="Reservar Mi Estimado Gratis">Book My Free Estimate</button>
           </form>
         </div>
       </div>
