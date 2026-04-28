@@ -7,7 +7,7 @@
   --card: #ffffff;
   --border: #e5e7eb;
   --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  --radius: 18px;
+  --radius: 8px;
   --max: 1100px;
 }
 
@@ -176,7 +176,7 @@ h2 {
   background:
     linear-gradient(90deg, rgba(11, 31, 16, 0.84) 0%, rgba(33, 91, 36, 0.64) 46%, rgba(0, 0, 0, 0.34) 100%),
     linear-gradient(180deg, rgba(11, 31, 16, 0.26) 0%, rgba(11, 31, 16, 0.48) 100%),
-    url("./project-photos/rainbow-landscaping-sprinkler-hero.jpg") center / cover no-repeat;
+    url("./assets/images/projects/new-build-corner-lot-landscaping/after-sod-front-yard.jpg") center / cover no-repeat;
   color: #fff;
   overflow: hidden;
 }
@@ -628,6 +628,69 @@ textarea {
   text-align: center;
 }
 
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.work-project-card {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.work-project-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.work-project-copy h3,
+.work-project-copy h4 {
+  margin: 0;
+  color: var(--green-dark);
+}
+
+.work-project-copy p,
+.work-project-copy figcaption {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.work-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.work-photo-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.work-photo-grid img:first-child:nth-last-child(3),
+.work-photo-grid img:first-child:nth-last-child(5) {
+  grid-column: span 2;
+}
+
+.work-project-actions {
+  margin-top: 4px;
+}
+
+.work-project-actions .btn {
+  padding: 10px 15px;
+  font-size: 0.92rem;
+}
+
 @media (max-width: 900px) {
   body.home-page {
     padding-bottom: 78px;
@@ -644,7 +707,8 @@ textarea {
   .gallery,
   .project-images,
   .recent-projects-gallery,
-  .projects-grid {
+  .projects-grid,
+  .work-grid {
     grid-template-columns: 1fr;
   }
 
@@ -691,6 +755,6 @@ textarea {
     padding: 72px 0 58px;
     background:
       linear-gradient(180deg, rgba(11, 31, 16, 0.84) 0%, rgba(33, 91, 36, 0.66) 62%, rgba(0, 0, 0, 0.38) 100%),
-      url("./project-photos/rainbow-landscaping-sprinkler-hero.jpg") center / cover no-repeat;
+      url("./assets/images/projects/new-build-corner-lot-landscaping/after-sod-front-yard.jpg") center / cover no-repeat;
   }
 }
